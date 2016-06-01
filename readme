@@ -1,0 +1,63 @@
+1) The application uses two datamodels: Product, CurrentPrice
+CurrentPrice object will be embedded in Product object
+
+2) Future enhancements: We can use swagger documentation for better look and feel of the APIs.
+Also, Pagination can be added to these APIs
+
+3) Running the APP
+Pre-requisites:
+MongoDB should be up and running on your machine.
+Run the spring boot application as follows
+RightClick on the project ->run as -> maven build -> Goal is "spring-boot:run"
+
+Rest API apps such as postman or Application REST Client can be used to test the APIs
+
+===========API USAGE==================
+(i) POST:
+URI: http://localhost:8080/products/post/
+Sample RequestData: {"id":13860428,"current_price":{"value": 13.49,"currency_code":"USD"}}
+Sample Response:
+{
+"message": "Product details are stored successfully"
+"product details saved": {
+"id": "13860428"
+"name": ""The Big Lebowski [Blu-ray]""
+"current_price": {
+"value": "13.49"
+"currency_code": "USD"
+}-
+}-
+}
+
+
+(ii)GET
+URI: http://localhost:8080/products?id=13860428
+Response:
+{
+"id": "13860428"
+"name": ""The Big Lebowski [Blu-ray]""
+"current_price": {
+"value": "13.49"
+"currency_code": "USD"
+}-
+}
+
+
+(iii) PUT
+URI: http://localhost:8080/products/13860428
+Sample Request Payload: {"value": "123456","currency_code":"USD"}
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+	
