@@ -28,7 +28,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.mongodb.MongoClient;
 
-import myretail.dao.ProductsDAO;
+import myretail.dao.ProductDAO;
 import myretail.model.CurrentPrice;
 import myretail.model.Product;
 
@@ -42,7 +42,7 @@ import myretail.model.Product;
 @RequestMapping("/products")
 public class ProductsController {
 
-	private ProductsDAO productsDao;
+	private ProductDAO productsDao;
 	private Datastore datastore;
 
 	public ProductsController() throws UnknownHostException {
@@ -53,7 +53,7 @@ public class ProductsController {
 
 			// initialize datastore and products DAO
 			datastore = morphia.createDatastore(mongoClient, MyRetailApplication.DATABASE_NAME);
-			productsDao = new ProductsDAO(mongoClient, morphia, MyRetailApplication.DATABASE_NAME);
+			productsDao = new ProductDAO(mongoClient, morphia, MyRetailApplication.DATABASE_NAME);
 		} catch (UnknownHostException e) {
 			System.out.println("Exception occurred while establishing connection to MongoDB or creating the database");
 			throw e;

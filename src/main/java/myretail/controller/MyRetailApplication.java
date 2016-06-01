@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class MyRetailApplication {
-	static String DATABASE_NAME = "MyRetailProducts";
+	public static String DATABASE_NAME = "MyRetailProducts";
 
 	public static void main(String[] args) {
 		SpringApplication.run(MyRetailApplication.class, args);
